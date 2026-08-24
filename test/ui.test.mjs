@@ -79,6 +79,7 @@ ok('pos checkboxes built', $('pos-filter').querySelectorAll('.check').length ===
 ok('pos labels are german', /Substantive/.test($('pos-filter').textContent), $('pos-filter').textContent);
 ok('setup visible at boot', $('screen-setup').hidden === false);
 ok('session hidden at boot', $('screen-session').hidden === true);
+ok('help hidden at boot', $('screen-help').hidden === true);
 
 // default 1-100, all types
 $('range-start').value = '1'; fire($('range-start'), 'input');
@@ -707,6 +708,62 @@ ok('audio switched off without an Italian voice', $('opt-audio').disabled === tr
 ok('audio note explains the silence', $('audio-note').hidden === false);
 ok('audio note names the missing voice', /italienische Stimme/.test($('audio-note').textContent),
   $('audio-note').textContent);
+
+
+/* ------------------------------------------------------ instructions ---- */
+// The whole point of the in-app manual is that nobody has to find the
+// repository to learn how the app works, so the link has to sit on the first
+// screen and the text has to carry the parts that matter in daily use.
+
+const helpBtn = $('btn-help');
+ok('help link lives on the setup screen', $('screen-setup').contains(helpBtn));
+ok('help link is labelled', /Anleitung/.test(helpBtn.textContent), helpBtn.textContent);
+
+helpBtn.click();
+await settle();
+ok('help screen shown', $('screen-help').hidden === false);
+ok('setup hidden while reading', $('screen-setup').hidden === true);
+
+const helpText = $('screen-help').textContent;
+for (const topic of [
+  'Wortarten',
+  'Karteikarten',
+  'Tipp',
+  'Leitner',
+  'Serie',
+  'Artikel',
+  'Akzente',
+  'Home-Bildschirm',
+]) {
+  ok(`help covers ${topic}`, helpText.includes(topic));
+}
+ok('help explains the box intervals', /21 Tagen/.test(helpText));
+ok('help names what breaks the streak', /ganzer Tag ohne/.test(helpText));
+
+// Everything a normal user does not need stays in the repository.
+ok('help leaves the build out', !/npm test|http\.server|localStorage/.test(helpText), helpText.slice(0, 40));
+
+const repoLink = $('screen-help').querySelector('a.ext-link');
+ok('help points at the repository', /github\.com\/andreashandel\/deutsch-italienisch/.test(repoLink.href),
+  repoLink.href);
+ok('external link opens safely', repoLink.rel === 'noopener' && repoLink.target === '_blank');
+
+$('btn-help-back').click();
+await settle();
+ok('help back to setup', $('screen-setup').hidden === false && $('screen-help').hidden === true);
+
+helpBtn.click();
+await settle();
+$('btn-help-done').click();
+await settle();
+ok('help done returns to setup', $('screen-setup').hidden === false && $('screen-help').hidden === true);
+
+// A round must never leave two screens on top of each other.
+$('btn-typing').click();
+await settle();
+ok('help hidden during a round', $('screen-help').hidden === true);
+$('btn-quit').click();
+await settle();
 
 console.log('\n' + pass + ' passed, ' + fail + ' failed');
 process.exit(fail ? 1 : 0);

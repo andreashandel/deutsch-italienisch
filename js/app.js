@@ -354,7 +354,7 @@ function speakItalian(text, { force = false } = {}) {
 /* --------------------------------------------------------------- screens */
 
 function showScreen(name) {
-  for (const id of ['setup', 'session', 'summary', 'browse']) {
+  for (const id of ['setup', 'session', 'summary', 'browse', 'help']) {
     $(`screen-${id}`).hidden = id !== name;
   }
   window.scrollTo(0, 0);
@@ -851,6 +851,16 @@ function wireSummary() {
   $('btn-to-setup').addEventListener('click', () => showScreen('setup'));
 }
 
+// The instructions live in index.html as a fifth screen rather than on a page
+// of their own: no fetch, nothing extra to cache, and they open offline like
+// everything else.
+function wireHelp() {
+  $('btn-help').addEventListener('click', () => showScreen('help'));
+  for (const id of ['btn-help-back', 'btn-help-done']) {
+    $(id).addEventListener('click', () => showScreen('setup'));
+  }
+}
+
 function wireBrowse() {
   $('btn-browse-back').addEventListener('click', () => showScreen('setup'));
   $('browse-search').addEventListener('input', () => renderBrowse(currentSelection()));
@@ -892,6 +902,7 @@ async function init() {
   wireSession();
   wireSummary();
   wireBrowse();
+  wireHelp();
 
   if (speechAvailable()) {
     pickItalianVoice();

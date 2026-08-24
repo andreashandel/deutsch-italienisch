@@ -1,7 +1,7 @@
 // Offline support. Bump CACHE when any file below changes so the old cache is
 // dropped — otherwise an updated word list would never reach a device that has
 // already installed the app.
-const CACHE = 'italienisch-app-v1';
+const CACHE = 'italienisch-app-v2';
 
 const ASSETS = [
   '.',

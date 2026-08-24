@@ -785,6 +785,165 @@ button:disabled {
   white-space: nowrap;
 }
 
+/* ------------------------------------------------------------- Anleitung */
+
+/* A banner, not a footnote: the instructions are the first thing someone
+   arriving without context needs, so they get a full-width target of their
+   own rather than a link tucked into the footer. */
+.help-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  text-align: left;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 14px 16px;
+  margin-bottom: 16px;
+  color: var(--text);
+}
+
+.help-icon {
+  font-size: 1.5rem;
+  line-height: 1;
+  flex: none;
+}
+
+.help-text {
+  flex: 1;
+}
+
+.help-text b {
+  display: block;
+  font-size: 1rem;
+  color: var(--accent);
+}
+
+.help-text small {
+  display: block;
+  color: var(--muted);
+  font-size: 0.85rem;
+  line-height: 1.3;
+  margin-top: 2px;
+}
+
+.help-chevron {
+  color: var(--muted);
+  font-size: 1.5rem;
+  line-height: 1;
+  flex: none;
+}
+
+/* Running text, unlike the rest of the app, which is all controls. */
+.prose {
+  line-height: 1.55;
+}
+
+.prose h2 {
+  margin-bottom: 10px;
+}
+
+.prose p {
+  margin: 0 0 12px;
+}
+
+.prose p:last-child,
+.prose ul:last-child {
+  margin-bottom: 0;
+}
+
+.prose ul {
+  margin: 0 0 12px;
+  padding-left: 22px;
+}
+
+.prose li {
+  margin-bottom: 8px;
+}
+
+.prose li:last-child {
+  margin-bottom: 0;
+}
+
+.prose .lede {
+  font-size: 1.02rem;
+}
+
+/* Italian words inside the prose, matching how they are set everywhere else. */
+.prose .it {
+  font-weight: 600;
+}
+
+/* A line quoted from the app's own interface. */
+.prose .quote {
+  border-left: 3px solid var(--line);
+  padding: 2px 0 2px 12px;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+/* An aside that matters but is not the thread of the section. */
+.prose .note {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 0.94rem;
+}
+
+.prose-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 0 12px;
+  font-size: 0.94rem;
+}
+
+.prose-table th,
+.prose-table td {
+  text-align: left;
+  padding: 7px 10px 7px 0;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+
+.prose-table th {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.prose-table tr:last-child td {
+  border-bottom: 0;
+}
+
+.deck-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.deck-list li {
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 8px;
+}
+
+.deck-list li:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* Roomy enough to hit with a thumb, which a bare inline link is not. */
+.ext-link {
+  display: inline-block;
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+  padding: 10px 0;
+}
+
 .app-footer {
   text-align: center;
   color: var(--muted);

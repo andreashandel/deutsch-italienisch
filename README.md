@@ -10,6 +10,21 @@ Es ist eine statische Seite: reines HTML, CSS und ES-Module, kein Build-Schritt
 und keine Abhängigkeiten zur Laufzeit. `index.html` über einen beliebigen
 Webserver öffnen, und sie läuft.
 
+## Die Anleitung steckt in der App
+
+Wer die App benutzt, muss dafür nicht hierher: auf der Auswahlseite führt gleich
+unter dem Kopf ein Knopf **Anleitung** zu einem eigenen Bildschirm mit allem,
+was im täglichen Gebrauch zählt — Auswahl, die drei Übungsarten, wie Antworten
+geprüft werden, die Leitner-Kästen, die Serie, das Vorlesen und der
+Home-Bildschirm. Er liegt als fünfter Bildschirm in `index.html`, ist also auch
+offline da, und verweist am Ende hierher zurück.
+
+Was unten darüber hinaus steht — das CSV-Format, wie eigene Listen fest
+eingebaut werden, Aufbau, Tests, Veröffentlichen und die Pizza —, bleibt dem
+Repository vorbehalten. Die folgenden Abschnitte sind die ausführliche Fassung
+dessen, was in der App kürzer steht; wer beides ändert, sollte sie beieinander
+halten.
+
 ## Bedienung
 
 **Welche Wörter.** Oben eine Liste aus dem Auswahlfeld wählen, mit den Reglern
@@ -427,7 +442,8 @@ jsdom und braucht vorher ein `npm install`.
 ### Aufbau
 
 ```
-index.html               das gesamte Markup, vier Bildschirme
+index.html               das gesamte Markup, fünf Bildschirme
+                         (Auswahl, Runde, Ergebnis, Liste, Anleitung)
 css/style.css            ein Stylesheet, hell und dunkel
 js/app.js                Oberfläche und Zustand
 js/csv.js                CSV-Parsen, Spaltenaliase, Artikel und Elision

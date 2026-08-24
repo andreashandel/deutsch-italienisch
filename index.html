@@ -28,6 +28,15 @@
           </div>
         </header>
 
+        <button type="button" class="help-link" id="btn-help">
+          <span class="help-icon" aria-hidden="true">📖</span>
+          <span class="help-text">
+            <b>Anleitung</b>
+            <small>Wie das Üben, die Wiederholungen und die Serie funktionieren</small>
+          </span>
+          <span class="help-chevron" aria-hidden="true">›</span>
+        </button>
+
         <div class="card">
           <label class="field">
             <span class="field-label">Wortliste</span>
@@ -289,6 +298,440 @@
               <tbody id="browse-body"></tbody>
             </table>
           </div>
+        </div>
+      </section>
+
+      <!-- ========================== ANLEITUNG =========================== -->
+      <section id="screen-help" class="screen" hidden>
+        <header class="session-bar">
+          <button type="button" class="icon-btn" id="btn-help-back" aria-label="Zurück zur Auswahl">‹</button>
+          <h2 class="browse-title">Anleitung</h2>
+        </header>
+
+        <div class="card prose">
+          <p class="lede">
+            Wortliste wählen, mit den Reglern einen Ausschnitt daraus nehmen,
+            Wortarten anhaken — und dann tippen oder mit Karteikarten üben, in
+            beide Richtungen. Alles bleibt auf dem Gerät, und sobald die Seite
+            einmal geladen war, läuft sie auch ohne Netz.
+          </p>
+        </div>
+
+        <div class="card prose">
+          <h2>Welche Wörter</h2>
+          <p>
+            Oben eine Liste aus dem Auswahlfeld nehmen, mit den Reglern
+            <b>Von</b> und <b>Bis</b> einen Abschnitt festlegen und die
+            gewünschten <b>Wortarten</b> anhaken. Die beiden Regler schieben
+            einander, statt sich zu blockieren — zieht man <i>Von</i> über
+            <i>Bis</i> hinaus, wandert <i>Bis</i> mit — und sie passen sich an,
+            wenn man zu einer kürzeren Liste wechselt.
+          </p>
+          <p>
+            Der Bereich zählt <b>Positionen innerhalb der angehakten
+            Wortarten</b>, immer nach Häufigkeit sortiert. Nur „Substantive“
+            angehakt und 1–100 ergibt die hundert häufigsten Substantive; sind
+            alle Wortarten angehakt, ist 200–400 schlicht Wort 200 bis 400 der
+            Liste. Die Zeile unter den Reglern schreibt aus, was gerade
+            ausgewählt ist:
+          </p>
+          <p class="quote">
+            Positionen 1–100 · Grundlage: 200 Substantive, die du angehakt hast,
+            nach Häufigkeit sortiert.
+          </p>
+          <p>
+            Weil der Bereich erst nach dem Filtern gemessen wird, ist die
+            Auswahl immer so breit wie die Regler — Wortarten an- und abzuhaken
+            ändert, <i>welche</i> Wörter hineinfallen, nicht wie viele.
+          </p>
+          <p>
+            Wie viele davon in einer Runde drankommen, steht unter
+            <b>Optionen</b> als <i>Wörter pro Runde</i>. Ganz oben auf der Skala
+            steht „alle N“ — alles zu nehmen ist also eine Reglerstellung und
+            kein Sonderfall.
+          </p>
+        </div>
+
+        <div class="card prose">
+          <h2>Die drei Arten zu üben</h2>
+          <ul>
+            <li>
+              <b>Schreiben</b> — die Übersetzung eintippen und prüfen lassen.
+              <b>Enter</b> macht dasselbe wie <i>Prüfen</i>; ein zweiter Druck
+              geht zur nächsten Karte.
+            </li>
+            <li>
+              <b>Karteikarten</b> — Antwort aufdecken und sich selbst mit
+              <i>Nochmal / Gut / Leicht</i> benoten. Die Note fließt in die
+              Wiederholungsplanung ein.
+            </li>
+            <li>
+              <b>Liste durchsehen</b> — die aktuelle Auswahl als sortier- und
+              durchsuchbare Tabelle, ohne Abfrage.
+            </li>
+          </ul>
+          <p>
+            <b>Fällige Wörter wiederholen</b> und <b>Schwierige Wörter üben</b>
+            unter <i>Dein Fortschritt</i> ziehen aus der eigenen Historie statt
+            aus dem Reglerbereich.
+          </p>
+          <p>
+            Jede Karte nennt die <b>Wortart</b>, nach der sie fragt. Ohne sie
+            wäre ein deutscher Prompt wie <i>Stockwerk</i> nicht von <i>leise</i>
+            zu unterscheiden — beides heißt <span class="it">piano</span> — und
+            man wüsste nicht, ob <span class="it">il piano</span> oder das bloße
+            <span class="it">piano</span> gemeint ist.
+          </p>
+        </div>
+
+        <div class="card prose">
+          <h2>Tipps</h2>
+          <p>
+            <b>Tipp</b> deckt die Antwort Buchstabe für Buchstabe auf — aus
+            <span class="it">····</span> wird <span class="it">c···</span>, dann
+            <span class="it">ca··</span>. Es hört einen Buchstaben vor Schluss
+            auf, kann das Wort also nie ganz ausbuchstabieren. Den Artikel eines
+            Substantivs verrät ein Tipp nie: davor bleibt
+            <span class="it">··</span> stehen und erinnert daran, dass das
+            Geschlecht noch aussteht.
+          </p>
+          <p>
+            Ein Wort nach einem Tipp richtig zu haben, zählt weiterhin als
+            richtig, schiebt es aber nicht weiter nach hinten im
+            Wiederholungsplan — es kam ja mit Hilfe zustande. Die
+            Rundenübersicht zählt, wie viele Antworten einen Tipp gebraucht
+            haben.
+          </p>
+        </div>
+
+        <div class="card prose">
+          <h2>Wie Antworten geprüft werden</h2>
+          <p>
+            Getippte Antworten werden großzügig bewertet, denn es geht ums
+            Erinnern und nicht darum, einer deutschen Tastatur Zeichen
+            abzuringen:
+          </p>
+          <ul>
+            <li>Groß- und Kleinschreibung sowie Satzzeichen werden ignoriert.</li>
+            <li>
+              <b>Akzente sind freigestellt</b>: <span class="it">citta</span>
+              gilt wie <span class="it">città</span>,
+              <span class="it">perche</span> wie <span class="it">perché</span>.
+              Auch die Richtung des Akzents ist egal. Die richtige Schreibweise
+              steht nach dem Antworten immer da.
+            </li>
+            <li>
+              Der Apostroph zählt als Trennzeichen —
+              <span class="it">l'acqua</span> und <span class="it">l acqua</span>
+              sind dasselbe.
+            </li>
+            <li>
+              Auf der <b>deutschen</b> Seite falten sich die Umlaute:
+              <i>für</i> / <i>fuer</i>, <i>schön</i> / <i>schoen</i>, und
+              <i>ß</i> und <i>ss</i> sind austauschbar.
+            </li>
+            <li>Jede von mehreren Übersetzungen zählt: <i>machen; tun</i> nimmt beides.</li>
+            <li>
+              Ein vorangestellter deutscher Artikel ist freigestellt: <i>das
+              Buch</i> ist so gut wie <i>Buch</i>, <i>sich erinnern</i> geht auch
+              als <i>erinnern</i>. Klammerzusätze ebenso.
+            </li>
+            <li>
+              Kleine <b>Tippfehler</b> werden verziehen (ein Zeichen, bei langen
+              Wörtern zwei) und angezeigt, damit man die richtige Schreibweise
+              trotzdem sieht. Wörter unter vier Buchstaben bekommen kein
+              Fehlerbudget — bei <span class="it">mai</span> und
+              <span class="it">mia</span> wäre sonst nichts mehr zu
+              unterscheiden. Abschaltbar unter <i>Optionen</i>.
+            </li>
+          </ul>
+          <p>
+            Die deutsche Umlautfaltung gilt <b>nur für deutsche Antworten</b>.
+            Italienisch ist voll von <i>ue</i> und <i>uo</i>, die nie ein Umlaut
+            waren — <span class="it">due</span>, <span class="it">questo</span>,
+            <span class="it">guerra</span>.
+          </p>
+          <p>
+            Dass Akzente freigestellt sind, hat einen Preis:
+            <span class="it">sì</span> (ja) und <span class="it">si</span> (sich)
+            sind für die Prüfung dasselbe Wort. Die Akzentleiste über dem
+            Eingabefeld (à è é ì ò ù) ist trotzdem da — wer die Schreibweise
+            üben will, tippt sie mit.
+          </p>
+        </div>
+
+        <div class="card prose">
+          <h2>Der Artikel bei Substantiven</h2>
+          <p>
+            Italienische Substantive sind die Ausnahme von der Großzügigkeit:
+            <b>der Artikel ist Pflicht</b> — <span class="it">libro</span>
+            allein gilt als falsch, nur <span class="it">il libro</span> zählt.
+            Artikel werden außerdem nie unscharf verglichen,
+            <span class="it">la libro</span> ist also ein Fehler und kein
+            verziehener Tippfehler: das Geschlecht <i>ist</i> das, was hier
+            geprüft wird. Unter <i>Optionen</i> lässt sich die Forderung
+            abschalten, dann wird auch das nackte Substantiv angenommen.
+          </p>
+          <p class="note">
+            <b>Italienisch hat zwei Geschlechter</b>, aber drei Artikelformen im
+            Singular: <span class="it">il</span> für die meisten männlichen
+            Wörter, <span class="it">lo</span> für männliche vor s+Konsonant, z,
+            gn, ps (<span class="it">lo studente</span>,
+            <span class="it">lo zucchero</span>), und <span class="it">la</span>
+            für weibliche. Das Geschlecht deckt sich oft nicht mit dem deutschen
+            (<span class="it">il libro</span>, aber <i>das</i> Buch;
+            <span class="it">la macchina</span>, aber <i>das</i> Auto) — genau
+            deshalb ist der Artikel Pflicht.
+            <br /><br />
+            Vor einem Vokal (und vor stummem h) werden
+            <span class="it">lo</span> und <span class="it">la</span> zu
+            <b><span class="it">l'</span></b>: <span class="it">l'acqua</span>,
+            <span class="it">l'uomo</span>, <span class="it">l'hotel</span>. Die
+            Karte zeigt genau diese Form und akzeptiert sie natürlich. Weil
+            <span class="it">l'</span> das Geschlecht versteckt, geht die
+            ausgeschriebene Form ebenso durch:
+            <span class="it">la acqua</span> ist richtig,
+            <span class="it">lo acqua</span> nicht.
+            <br /><br />
+            Wörter, die es nur im Plural gibt, tragen ihren Pluralartikel:
+            <span class="it">i soldi</span>, <span class="it">gli occhiali</span>.
+          </p>
+        </div>
+
+        <div class="card prose">
+          <h2>Wiederholen: die fünf Kästen</h2>
+          <p>
+            Dahinter steckt ein <b>Leitner-System</b>. Jedes Wort sitzt in einem
+            von fünf Kästen, und der Kasten allein bestimmt, wann es wieder
+            fällig wird:
+          </p>
+          <table class="prose-table">
+            <thead>
+              <tr><th>Kasten</th><th>Nächste Wiederholung</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>1</td><td>sofort (noch am selben Tag)</td></tr>
+              <tr><td>2</td><td>nach 1 Tag</td></tr>
+              <tr><td>3</td><td>nach 3 Tagen</td></tr>
+              <tr><td>4</td><td>nach 7 Tagen</td></tr>
+              <tr><td>5</td><td>nach 21 Tagen</td></tr>
+            </tbody>
+          </table>
+          <p>Jedes Wort startet in Kasten 1. Nach jeder Antwort wandert es:</p>
+          <ul>
+            <li>
+              <b>falsch</b> → zurück in Kasten 1, egal wie weit oben es saß. Ein
+              Wort, das gerade noch 21 Tage Pause hatte, ist sofort wieder
+              fällig.
+            </li>
+            <li><b>richtig</b> → einen Kasten weiter.</li>
+            <li><b>Leicht</b> (nur bei Karteikarten) → zwei Kästen weiter.</li>
+            <li>
+              <b>richtig, aber mit Tipp</b> → der Kasten bleibt stehen. Es zählt
+              als richtig, aber das Intervall wächst nicht.
+            </li>
+          </ul>
+          <p>
+            Über Kasten 5 hinaus geht es nicht, 21 Tage sind das längste
+            Intervall. Beim <b>Schreiben</b> vergibt die App die Noten selbst —
+            richtig zählt wie <i>Gut</i>, falsch wie <i>Nochmal</i>; bei den
+            <b>Karteikarten</b> benotet man sich selbst.
+          </p>
+          <p>
+            Gezählt wird pro <b>Wort, nicht pro Richtung</b>: ob
+            <span class="it">il libro</span> aus dem Italienischen oder aus dem
+            Deutschen abgefragt wurde, landet im selben Konto. Gleich
+            geschriebene Wörter zählen dagegen getrennt, weil zur Identität
+            eines Wortes auch seine Wortart gehört.
+          </p>
+          <p>Die Zeile unter <i>Dein Fortschritt</i> liest daraus vier Zahlen ab:</p>
+          <p class="quote">
+            12 sitzen · 43 am Lernen · 445 noch nicht gesehen · 452 jetzt fällig
+          </p>
+          <p>
+            <b>Sitzen</b> sind die Wörter in Kasten 4 und 5, also die mit einer
+            Woche oder mehr Pause. <b>Am Lernen</b> ist alles, was schon einmal
+            beantwortet wurde und weiter unten sitzt. Die ersten drei Zahlen
+            ergeben zusammen die ganze Liste.
+          </p>
+          <p>
+            <b>Fällig</b> zählt quer dazu: fällig ist ein Wort, dessen Datum
+            erreicht ist — <i>und jedes noch nie gesehene Wort</i>. Deshalb ist
+            diese Zahl am Anfang fast so groß wie die Liste selbst und schrumpft
+            erst, wenn die Wörter in die höheren Kästen wandern.
+          </p>
+          <p>
+            Eine normale Runde zieht ihre Wörter <b>zufällig aus der Auswahl</b>
+            und schaut dabei nicht auf die Kästen. Wer nach Plan üben will,
+            nimmt <i>Fällige Wörter wiederholen</i>. <i>Schwierige Wörter üben</i>
+            geht nicht nach Kästen, sondern nach der Fehlerquote: alles, was
+            mindestens zweimal drankam und zu mindestens einem Drittel falsch
+            war, das Schlechteste zuerst.
+          </p>
+          <p>
+            Jede Wortliste führt ihre eigenen Kästen, und <i>Diese Liste
+            zurücksetzen</i> leert genau diese eine Liste.
+          </p>
+        </div>
+
+        <div class="card prose">
+          <h2>Die Serie</h2>
+          <p>
+            Der Chip oben auf der Auswahlseite zählt aufeinanderfolgende
+            Übungstage. Er wird grün, sobald der Tag im Kasten ist, und zeigt
+            den Bestwert neben dem aktuellen Stand.
+          </p>
+          <p>
+            Ein Tag zählt ab der <b>ersten bewerteten Antwort</b>, nicht ab
+            einer beendeten Runde — eine abgebrochene Runde zählt also trotzdem.
+            Gezählt werden lokale Kalendertage: 23 Uhr und dann 8 Uhr am
+            nächsten Morgen sind zwei Tage, nicht einer. Gestern zählt noch als
+            lebendig; gerissen ist die Serie erst, wenn ein ganzer Tag ohne
+            Übung vergangen ist. Sie gilt über alle Listen hinweg — fünf Minuten
+            Essensvokabeln halten sie genauso am Leben wie die Hauptliste.
+          </p>
+          <p><b>Was die Serie nicht anrührt.</b></p>
+          <ul>
+            <li>
+              Die <b>Wortliste zu wechseln</b> — im Gegenteil, jede Liste zahlt
+              auf dieselbe Serie ein.
+            </li>
+            <li>
+              <i>Diese Liste zurücksetzen</i> — das löscht nur die
+              Leitner-Kästen dieser einen Liste.
+            </li>
+            <li>
+              Falsche Antworten, eine abgebrochene Runde, ein Wechsel der
+              Richtung oder irgendeine andere Einstellung.
+            </li>
+          </ul>
+          <p><b>Was sie zurücksetzt.</b> Nur dreierlei:</p>
+          <ul>
+            <li>
+              <b>Ein ganzer Tag ohne eine einzige bewertete Antwort.</b> Der
+              Bestwert bleibt, die Zählung beginnt wieder bei 1.
+            </li>
+            <li>
+              <b>Gelöschte Browserdaten.</b> Damit sind Serie, Bestwert und alle
+              Kästen weg — es gibt kein Backup.
+            </li>
+            <li>
+              <b>Ein anderer Browser oder ein anderes Gerät.</b> Der zählt
+              eigenständig von vorn.
+            </li>
+          </ul>
+          <p>
+            Zwei Feinheiten: Blättern in <i>Liste durchsehen</i> hält die Serie
+            nicht am Leben, es braucht wirklich eine bewertete Antwort. Und weil
+            lokale Kalendertage gezählt werden, richtet sich der Tageswechsel
+            nach der Uhr des Geräts.
+          </p>
+        </div>
+
+        <div class="card prose">
+          <h2>Vorlesen</h2>
+          <p>
+            <b>🔊</b> neben einem italienischen Wort liest es vor. Der
+            Lautsprecher steht beim Prompt, wenn aus dem Italienischen übersetzt
+            wird, und bei der Antwort, wenn ins Italienische übersetzt wird — er
+            folgt also immer der italienischen Seite. Unter <i>Optionen</i> gibt
+            es zusätzlich <i>Das italienische Wort vorlesen</i>, das jede Karte
+            automatisch abspielt.
+          </p>
+          <p>
+            Ein zweites <b>🔊</b> steht neben dem <b>Beispielsatz</b>, sobald die
+            Antwort aufgedeckt ist. Gerade im Italienischen sitzt viel in der
+            Betonung — welche Silbe den Ton trägt, entscheidet über
+            <span class="it">ancora</span> und <span class="it">àncora</span> —,
+            ein Satz ist also mehr wert als das Einzelwort. Er wird nur auf
+            Knopfdruck gelesen.
+          </p>
+          <p>
+            Das braucht kein Netz, aber sehr wohl eine <b>italienische Stimme
+            auf dem Gerät</b>. iPads und iPhones bringen Italienisch fast immer
+            mit, ein deutscher Windows-Rechner nicht unbedingt. Fehlt die
+            Stimme, tauchen die Lautsprecher gar nicht erst auf und die Option
+            ist ausgegraut — lieber still als das italienische Wort mit
+            deutschem Akzent vorzulesen. Unter Windows lässt sich Italienisch
+            unter <i>Einstellungen → Zeit und Sprache → Sprache und Region</i>
+            nachladen.
+          </p>
+        </div>
+
+        <div class="card prose">
+          <h2>Die eingebauten Listen</h2>
+          <ul class="deck-list">
+            <li>
+              <b>Die 500 häufigsten Wörter</b> · 500 — allgemeiner Wortschatz,
+              nach Häufigkeit geordnet
+            </li>
+            <li>
+              <b>Zahlen &amp; Zählen</b> · 116 — Grundzahlen, Ordnungszahlen,
+              Brüche, Maße, Mengenwörter
+            </li>
+            <li>
+              <b>Essen &amp; Restaurant</b> · 131 — Bestellen, Mahlzeiten,
+              Zutaten, Kochen, Gedeck
+            </li>
+            <li>
+              <b>Zeit, Tage &amp; Monate</b> · 120 — Uhrzeit, Wochentage,
+              Monate, Jahreszeiten, Zeitadverbien
+            </li>
+          </ul>
+          <p>
+            Jede Liste führt ihren eigenen Lernfortschritt, Essensvokabeln
+            stören also nicht, wo man in der Hauptliste steht. Die drei
+            Themenlisten sind nach Thema und nicht nach Häufigkeit geordnet —
+            die Bereichsregler funktionieren trotzdem, „die ersten 40 der
+            Essensliste“ ist dann eben der Restaurant-Block.
+          </p>
+          <p>
+            Mit <b>CSV-Datei laden…</b> lässt sich eine eigene Wortliste vom
+            Gerät dazunehmen. Die Datei wird nur lokal gelesen und nie
+            hochgeladen; sie bleibt im Browser gemerkt und muss also nur einmal
+            ausgewählt werden. Wie so eine Datei aussehen muss, steht im
+            Repository (Link unten).
+          </p>
+        </div>
+
+        <div class="card prose">
+          <h2>Auf den Home-Bildschirm legen</h2>
+          <p>
+            Auf dem iPad oder iPhone die Seite in Safari öffnen, dann
+            <b>Teilen → Zum Home-Bildschirm</b>. Auf Android und am Rechner geht
+            dasselbe über <b>Installieren</b> bzw. <i>Zum Startbildschirm
+            hinzufügen</i> im Chrome-Menü. Das gibt der App ein Symbol, lässt
+            sie ohne Browser-Leiste im Vollbild laufen und funktioniert offline.
+          </p>
+          <p class="note">
+            Es ist außerdem aus einem nicht offensichtlichen Grund wichtig: iOS
+            löscht die gespeicherten Daten von Seiten, die etwa sieben Tage
+            nicht besucht wurden — und das nähme Fortschritt und Serie mit. Auf
+            dem Home-Bildschirm ist die App davon ausgenommen, und das ist das
+            Einzige, was die Historie schützt. Es gibt kein Backup und keinen
+            Export.
+          </p>
+        </div>
+
+        <div class="card prose">
+          <p class="hint">
+            Mehr steht im Repository: das CSV-Format für eigene Wortlisten, wie
+            man sie fest einbaut, wie die App aufgebaut und getestet wird und
+            was es mit der Pizza auf sich hat.
+          </p>
+          <p>
+            <a
+              class="ext-link"
+              href="https://github.com/andreashandel/deutsch-italienisch#readme"
+              target="_blank"
+              rel="noopener"
+              >Zur ausführlichen Doku auf GitHub ↗</a
+            >
+          </p>
+        </div>
+
+        <div class="actions">
+          <button type="button" class="secondary" id="btn-help-done">Zurück zur Auswahl</button>
         </div>
       </section>
     </div>
