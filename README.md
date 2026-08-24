@@ -52,9 +52,68 @@ heißt `piano` — und man könnte nicht wissen, ob `il piano` oder das bloße
   Tabelle.
 
 **Fällige Wörter wiederholen** und **Schwierige Wörter üben** ziehen aus der
-eigenen Historie statt aus dem Reglerbereich: fällig sind Wörter, deren
-Leitner-Intervall abgelaufen ist, schwierig sind Wörter, die mindestens zu einem
-Drittel falsch beantwortet wurden.
+eigenen Historie statt aus dem Reglerbereich — was dabei als fällig und was als
+schwierig gilt, steht gleich im nächsten Abschnitt.
+
+### Wie wiederholt wird: die fünf Kästen
+
+Dahinter steckt ein **Leitner-System**. Jedes Wort sitzt in einem von fünf
+Kästen, und der Kasten allein bestimmt, wann es wieder fällig wird:
+
+| Kasten | Nächste Wiederholung |
+| ------ | -------------------- |
+| 1 | sofort (noch am selben Tag) |
+| 2 | nach 1 Tag |
+| 3 | nach 3 Tagen |
+| 4 | nach 7 Tagen |
+| 5 | nach 21 Tagen |
+
+Jedes Wort startet in Kasten 1. Nach jeder Antwort wandert es:
+
+- **falsch** → zurück in Kasten 1, egal wie weit oben es saß. Ein Wort, das
+  gerade noch 21 Tage Pause hatte, ist damit sofort wieder fällig.
+- **richtig** → einen Kasten weiter.
+- **Leicht** (nur bei Karteikarten) → zwei Kästen weiter.
+- **richtig, aber mit Tipp** → der Kasten bleibt stehen. Es zählt als richtig
+  und wird nicht als Fehler vermerkt, aber das Intervall wächst nicht: wer ein
+  Wort nur mit Hilfe herausbekommt, soll es bald wiedersehen.
+
+Über Kasten 5 hinaus geht es nicht, 21 Tage sind das längste Intervall. Das
+Datum wird nach jeder Antwort neu aus dem aktuellen Kasten berechnet, nicht
+fortgeschrieben.
+
+Beim **Schreiben** vergibt die App die Noten selbst — richtig zählt wie *Gut*,
+richtig nach einem Tipp wie oben, falsch wie *Nochmal*. Bei den **Karteikarten**
+benotet man sich selbst mit *Nochmal / Gut / Leicht*.
+
+Gezählt wird pro **Wort, nicht pro Richtung**: ob `il libro` aus dem
+Italienischen oder aus dem Deutschen abgefragt wurde, landet im selben Konto.
+Gleich geschriebene Wörter zählen dagegen getrennt, weil zur Identität eines
+Wortes auch seine Wortart gehört — `il piano` (Stockwerk) und `piano` (leise)
+haben eigene Kästen.
+
+Die Zeile unter *Dein Fortschritt* liest daraus vier Zahlen ab:
+
+> 12 sitzen · 43 am Lernen · 445 noch nicht gesehen · 452 jetzt fällig
+
+**Sitzen** sind die Wörter in Kasten 4 und 5, also die mit einer Woche oder mehr
+Pause. **Am Lernen** ist alles, was schon einmal beantwortet wurde und weiter
+unten sitzt. Die ersten drei Zahlen ergeben zusammen die ganze Liste.
+
+**Fällig** zählt quer dazu: fällig ist ein Wort, dessen Datum erreicht ist —
+*und jedes noch nie gesehene Wort*. Deshalb ist diese Zahl am Anfang fast so
+groß wie die Liste selbst und schrumpft erst, wenn die Wörter in die höheren
+Kästen wandern. Im Beispiel sind es die 445 unbekannten plus sieben, deren
+Intervall abgelaufen ist.
+
+Eine normale Runde zieht ihre Wörter **zufällig aus der Auswahl** und schaut
+dabei nicht auf die Kästen. Wer nach Plan üben will, nimmt *Fällige Wörter
+wiederholen*. *Schwierige Wörter üben* geht nicht nach Kästen, sondern nach der
+Fehlerquote: alles, was mindestens zweimal drankam und zu mindestens einem
+Drittel falsch war, das Schlechteste zuerst.
+
+Jede Wortliste führt ihre eigenen Kästen, und *Diese Liste zurücksetzen* leert
+genau diese eine Liste.
 
 ### Die Serie
 
@@ -72,6 +131,30 @@ ohne Übung vergangen ist.
 
 Die Serie gilt über alle Listen hinweg — fünf Minuten Essensvokabeln halten sie
 genauso am Leben wie die Hauptliste.
+
+**Was die Serie nicht anrührt.** Sie hängt an keiner einzelnen Wortliste,
+sondern wird für die ganze App gezählt und liegt an einem eigenen Platz im
+Speicher des Browsers. Die **Wortliste zu wechseln, setzt sie also nicht
+zurück** — im Gegenteil, jede Liste zahlt auf dieselbe Serie ein. Auch *Diese
+Liste zurücksetzen* lässt sie stehen: das löscht nur die Leitner-Kästen dieser
+einen Liste. Falsche Antworten, eine abgebrochene Runde, ein Wechsel der
+Richtung oder irgendeine andere Einstellung sind ihr ebenso egal.
+
+**Was sie zurücksetzt.** Nur dreierlei:
+
+- **Ein ganzer Tag ohne eine einzige bewertete Antwort.** Dann steht der Chip
+  wieder bei null und die nächste Übung beginnt bei 1. Der Bestwert bleibt.
+- **Gelöschte Browserdaten.** Damit sind Serie, Bestwert und alle Kästen weg —
+  es gibt kein Backup. Auf dem iPhone und iPad genügt dafür schon, die Seite
+  eine Woche lang nicht zu öffnen, solange sie nicht auf dem Home-Bildschirm
+  liegt (siehe unten).
+- **Ein anderer Browser oder ein anderes Gerät.** Der zählt eigenständig von
+  vorn; die Serie wandert nicht mit.
+
+Zwei Feinheiten noch: Blättern in *Liste durchsehen* hält die Serie nicht am
+Leben, es braucht wirklich eine bewertete Antwort. Und weil lokale Kalendertage
+gezählt werden, richtet sich der Tageswechsel nach der Uhr des Geräts — eine
+Reise über Zeitzonen hinweg kann die Grenze verschieben.
 
 ### Wie Antworten geprüft werden
 
