@@ -1,0 +1,22 @@
+[
+  {
+    "id": "it-top500",
+    "name": "Italienisch — die 500 häufigsten Wörter",
+    "file": "data/it-top500.csv"
+  },
+  {
+    "id": "it-numbers",
+    "name": "Zahlen & Zählen",
+    "file": "data/it-numbers.csv"
+  },
+  {
+    "id": "it-food",
+    "name": "Essen & Restaurant",
+    "file": "data/it-food.csv"
+  },
+  {
+    "id": "it-time",
+    "name": "Zeit, Tage & Monate",
+    "file": "data/it-time.csv"
+  }
+]
